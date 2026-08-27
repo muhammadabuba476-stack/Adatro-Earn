@@ -893,5 +893,372 @@ function handleNavigation(page) {
 
     return;
   }
+/* =========================
+   TASK EXECUTION
+========================= */
 
-   }
+const taskExecutionPage =
+  document.getElementById(
+    "taskExecutionPage"
+  );
+
+const taskBack =
+  document.getElementById(
+    "taskBack"
+  );
+
+const executionTitle =
+  document.getElementById(
+    "executionTitle"
+  );
+
+const executionDescription =
+  document.getElementById(
+    "executionDescription"
+  );
+
+const executionIcon =
+  document.getElementById(
+    "executionIcon"
+  );
+
+const executionRequirement =
+  document.getElementById(
+    "executionRequirement"
+  );
+
+const taskTimer =
+  document.getElementById(
+    "taskTimer"
+  );
+
+const progressBar =
+  document.getElementById(
+    "progressBar"
+  );
+
+const progressPercent =
+  document.getElementById(
+    "progressPercent"
+  );
+
+const executionButton =
+  document.getElementById(
+    "executionButton"
+  );
+
+const verificationCard =
+  document.getElementById(
+    "verificationCard"
+  );
+
+
+let executionInterval = null;
+let executionSeconds = 0;
+let executionDuration = 30;
+let currentExecutionTask = null;
+
+
+/* =========================
+   TASK CONFIG
+========================= */
+
+const executionTasks = {
+
+  watch: {
+    title: "Watch & Complete",
+    icon: "▶",
+    duration: 30,
+
+    description:
+      "Watch the sponsored content until the required completion point.",
+
+    requirement:
+      "Stay on the opportunity until the required completion point."
+  },
+
+
+  brand: {
+    title: "Discover a Brand",
+    icon: "◉",
+    duration: 20,
+
+    description:
+      "Visit the sponsored website and complete the required interaction.",
+
+    requirement:
+      "Keep the sponsored page open and complete the required action."
+  },
+
+
+  telegram: {
+    title: "Join & Discover",
+    icon: "✈",
+    duration: 15,
+
+    description:
+      "Discover the sponsored Telegram community.",
+
+    requirement:
+      "Complete the required community action."
+  }
+
+};
+
+
+/* =========================
+   OPEN EXECUTION
+========================= */
+
+function openTaskExecution(taskKey) {
+
+  const task =
+    executionTasks[taskKey];
+
+  if (!task) return;
+
+  currentExecutionTask =
+    taskKey;
+
+  executionDuration =
+    task.duration;
+
+  executionSeconds = 0;
+
+  executionTitle.textContent =
+    task.title;
+
+  executionIcon.textContent =
+    task.icon;
+
+  executionDescription.textContent =
+    task.description;
+
+  executionRequirement.textContent =
+    task.requirement;
+
+  taskTimer.textContent =
+    executionDuration;
+
+  progressBar.style.width =
+    "0%";
+
+  progressPercent.textContent =
+    "0%";
+
+  executionButton.textContent =
+    "Start Opportunity";
+
+  executionButton.disabled =
+    false;
+
+  verificationCard.classList.add(
+    "hidden"
+  );
+
+  taskExecutionPage.classList.remove(
+    "hidden"
+  );
+
+  document.querySelector(
+    ".topbar"
+  )?.classList.add("hidden");
+
+  homeContent?.classList.add("hidden");
+  balanceCard?.classList.add("hidden");
+  mainEarnButton?.classList.add("hidden");
+
+  document.querySelector(
+    ".section-header"
+  )?.classList.add("hidden");
+
+  homeSection?.classList.add("hidden");
+  trustCard?.classList.add("hidden");
+
+  earnPage?.classList.add("hidden");
+  friendsPage?.classList.add("hidden");
+  profilePage?.classList.add("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+
+/* =========================
+   START EXECUTION
+========================= */
+
+executionButton.addEventListener(
+  "click",
+  () => {
+
+    if (!currentExecutionTask) {
+      return;
+    }
+
+    if (
+      executionSeconds >=
+      executionDuration
+    ) {
+      return;
+    }
+
+    executionButton.disabled =
+      true;
+
+    executionButton.textContent =
+      "Task in progress...";
+
+    executionInterval =
+      setInterval(
+        updateTaskProgress,
+        1000
+      );
+
+  }
+);
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+function updateTaskProgress() {
+
+  executionSeconds++;
+
+  const remaining =
+    executionDuration -
+    executionSeconds;
+
+  const percentage =
+    Math.min(
+      Math.round(
+        (executionSeconds /
+          executionDuration) *
+          100
+      ),
+      100
+    );
+
+  taskTimer.textContent =
+    Math.max(
+      remaining,
+      0
+    );
+
+  progressBar.style.width =
+    `${percentage}%`;
+
+  progressPercent.textContent =
+    `${percentage}%`;
+
+
+  if (
+    executionSeconds >=
+    executionDuration
+  ) {
+
+    clearInterval(
+      executionInterval
+    );
+
+    completeTaskExecution();
+
+  }
+
+}
+
+
+/* =========================
+   COMPLETE
+========================= */
+
+function completeTaskExecution() {
+
+  executionButton.disabled =
+    true;
+
+  executionButton.textContent =
+    "Submitted for verification";
+
+  verificationCard.classList.remove(
+    "hidden"
+  );
+
+  /*
+    IMPORTANT:
+    We DO NOT credit the wallet here.
+
+    Production flow:
+
+    Task completion
+         ↓
+    Backend verification
+         ↓
+    Provider confirmation
+         ↓
+    Reward transaction
+         ↓
+    pending
+         ↓
+    available
+
+    Only the server can change
+    the user's real balance.
+  */
+
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+taskBack.addEventListener(
+  "click",
+  () => {
+
+    if (executionInterval) {
+
+      clearInterval(
+        executionInterval
+      );
+
+      executionInterval = null;
+
+    }
+
+    taskExecutionPage.classList.add(
+      "hidden"
+    );
+
+    showEarnPage();
+
+  }
+);
+
+
+/* =========================
+   CONNECT EARN TASK BUTTONS
+========================= */
+
+startTaskButtons.forEach(
+  (button) => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        const task =
+          button.dataset.task;
+
+        openTaskExecution(task);
+
+      }
+    );
+
+  
+   
