@@ -676,5 +676,222 @@ confirmTask.addEventListener(
       "Task verification will be connected to the ADATRO EARN backend."
     );
 
+  /* =========================
+   PROFILE PAGE
+========================= */
+
+const profilePage =
+  document.getElementById(
+    "profilePage"
+  );
+
+const profileBack =
+  document.getElementById(
+    "profileBack"
+  );
+
+const profileAvatar =
+  document.getElementById(
+    "profileAvatar"
+  );
+
+const profileName =
+  document.getElementById(
+    "profileName"
+  );
+
+const profileUsername =
+  document.getElementById(
+    "profileUsername"
+  );
+
+const accountId =
+  document.getElementById(
+    "accountId"
+  );
+
+
+function showProfilePage() {
+
+  document.querySelector(
+    ".topbar"
+  )?.classList.add("hidden");
+
+  homeContent?.classList.add("hidden");
+  balanceCard?.classList.add("hidden");
+  mainEarnButton?.classList.add("hidden");
+
+  document.querySelector(
+    ".section-header"
+  )?.classList.add("hidden");
+
+  homeSection?.classList.add("hidden");
+  trustCard?.classList.add("hidden");
+
+  earnPage?.classList.add("hidden");
+  friendsPage?.classList.add("hidden");
+
+  profilePage?.classList.remove(
+    "hidden"
+  );
+
+  loadProfile();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+
+profileBack?.addEventListener(
+  "click",
+  () => {
+
+    profilePage?.classList.add(
+      "hidden"
+    );
+
+    showHomePage();
+
   }
 );
+
+
+/* =========================
+   LOAD TELEGRAM PROFILE
+========================= */
+
+function loadProfile() {
+
+  const user =
+    tg?.initDataUnsafe?.user;
+
+  if (!user) {
+
+    profileAvatar.textContent =
+      "A";
+
+    profileName.textContent =
+      "ADATRO EARN User";
+
+    profileUsername.textContent =
+      "@user";
+
+    accountId.textContent =
+      "TEST";
+
+    return;
+  }
+
+
+  const firstName =
+    user.first_name || "User";
+
+  const lastName =
+    user.last_name || "";
+
+  const fullName =
+    `${firstName} ${lastName}`.trim();
+
+
+  profileName.textContent =
+    fullName;
+
+
+  profileAvatar.textContent =
+    firstName
+      .charAt(0)
+      .toUpperCase();
+
+
+  if (user.username) {
+
+    profileUsername.textContent =
+      `@${user.username}`;
+
+  } else {
+
+    profileUsername.textContent =
+      "Telegram user";
+
+  }
+
+
+  /*
+    NOTE:
+    Telegram ID is displayed only as a
+    temporary development value.
+
+    In production we should NOT expose
+    sensitive internal identifiers.
+  */
+
+  accountId.textContent =
+    String(user.id);
+}
+
+
+/* =========================
+   UPDATE NAVIGATION
+========================= */
+
+function hideAllPages() {
+
+  earnPage?.classList.add(
+    "hidden"
+  );
+
+  friendsPage?.classList.add(
+    "hidden"
+  );
+
+  profilePage?.classList.add(
+    "hidden"
+  );
+
+}
+
+
+/* Replace your existing
+   handleNavigation() with this version.
+*/
+
+function handleNavigation(page) {
+
+  if (page === "home") {
+
+    hideAllPages();
+    showHomePage();
+
+    return;
+  }
+
+
+  if (page === "earn") {
+
+    hideAllPages();
+    showEarnPage();
+
+    return;
+  }
+
+
+  if (page === "friends") {
+
+    hideAllPages();
+    showFriendsPage();
+
+    return;
+  }
+
+
+  if (page === "profile") {
+
+    hideAllPages();
+    showProfilePage();
+
+    return;
+  }
+
+   }
