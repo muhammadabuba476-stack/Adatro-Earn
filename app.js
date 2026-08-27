@@ -1460,4 +1460,5 @@ navItems.forEach((item) => {
   });
 
 });
-   
+   document.querySelector(".bottom-nav")
+  ?.classList.add("hidden");
