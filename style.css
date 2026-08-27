@@ -1545,3 +1545,103 @@ button:active {
   color: var(--muted);
   font-size: 10px;
 }
+.withdraw-card {
+  padding: 20px 17px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.withdraw-label {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  color: var(--muted);
+}
+
+.withdraw-card > strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 28px;
+}
+
+.withdraw-card label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.amount-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.amount-input span {
+  font-weight: 700;
+}
+
+.amount-input input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 16px;
+}
+
+.withdraw-card select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface);
+}
+
+.withdraw-hint {
+  margin-top: 7px;
+  font-size: 9px;
+  color: var(--muted);
+}
+
+.secondary-button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface-soft);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.withdraw-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--text);
+  color: var(--surface);
+  font-weight: 700;
+}
+
+.withdraw-notice {
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.withdraw-notice strong {
+  font-size: 10px;
+}
+
+.withdraw-notice p {
+  margin-top: 5px;
+  font-size: 9px;
+  line-height: 1.55;
+  color: var(--muted);
+}
