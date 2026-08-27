@@ -1137,4 +1137,241 @@ button:active {
 
   color: var(--muted);
 }
+  /* =========================
+   TASK EXECUTION
+========================= */
+
+.execution-card {
+  padding: 22px 17px;
+
+  border: 1px solid var(--border);
+  border-radius: 23px;
+
+  background: var(--surface);
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 25px rgba(17, 24, 39, 0.04);
+}
+
+.execution-icon {
+  width: 65px;
+  height: 65px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 auto 13px;
+
+  border-radius: 20px;
+
+  background: var(--surface-soft);
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.execution-card h2 {
+  margin-top: 6px;
+
+  font-size: 22px;
+
+  letter-spacing: -0.04em;
+}
+
+.execution-card > p {
+  max-width: 330px;
+
+  margin: 8px auto 0;
+
+  font-size: 10px;
+  line-height: 1.6;
+
+  color: var(--muted);
+}
+
+
+/* Timer */
+
+.timer-box {
+  margin-top: 22px;
+  padding: 17px;
+
+  border-radius: 17px;
+
+  background: var(--surface-soft);
+}
+
+.timer-box span {
+  display: block;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+
+  color: var(--muted);
+}
+
+.timer-box strong {
+  display: inline-block;
+
+  margin-top: 5px;
+
+  font-size: 34px;
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+.timer-box small {
+  margin-left: 4px;
+
+  font-size: 10px;
+  color: var(--muted);
+}
+
+
+/* Progress */
+
+.progress-section {
+  margin-top: 19px;
+
+  text-align: left;
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+}
+
+.progress-header span {
+  font-size: 9px;
+  color: var(--muted);
+}
+
+.progress-header strong {
+  font-size: 9px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 99px;
+
+  background: var(--surface-soft);
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--text);
+
+  transition: width 0.5s ease;
+}
+
+
+/* Requirement */
+
+.execution-requirement {
+  margin-top: 17px;
+  padding: 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  text-align: left;
+}
+
+.execution-requirement strong {
+  display: block;
+
+  font-size: 10px;
+}
+
+.execution-requirement p {
+  margin-top: 4px;
+
+  font-size: 9px;
+  line-height: 1.5;
+
+  color: var(--muted);
+}
+
+
+/* Action button */
+
+.execution-button {
+  width: 100%;
+
+  margin-top: 14px;
+  padding: 14px;
+
+  border-radius: 14px;
+
+  background: var(--accent);
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* Verification */
+
+.verification-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 12px;
+  padding: 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 17px;
+
+  background: var(--surface);
+}
+
+.verification-icon {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: var(--success-soft);
+  color: var(--success);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.verification-card strong {
+  display: block;
+
+  font-size: 11px;
+}
+
+.verification-card p {
+  margin-top: 4px;
+
+  font-size: 9px;
+  line-height: 1.55;
+
+  color: var(--muted);
+}
 }
