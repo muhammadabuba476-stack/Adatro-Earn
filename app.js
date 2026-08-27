@@ -218,7 +218,81 @@ function scrollToOpportunities() {
   });
 
 }
+const watchRealAd =
+  document.getElementById(
+    "watchRealAd"
+  );
 
+
+watchRealAd?.addEventListener(
+  "click",
+  async () => {
+
+    if (!AdController) {
+
+      showMessage(
+        "Rewarded ads are not available right now."
+      );
+
+      return;
+    }
+
+
+    watchRealAd.disabled = true;
+
+    watchRealAd.textContent =
+      "Loading ad...";
+
+
+    try {
+
+      const result =
+        await AdController.show();
+
+
+      if (
+        result &&
+        result.done === true &&
+        result.error === false
+      ) {
+
+        /*
+         * IMPORTANT:
+         *
+         * Do NOT directly increase wallet
+         * from this frontend callback.
+         *
+         * We notify our backend that the
+         * ad session finished.
+         */
+
+        await submitAdCompletion();
+
+      }
+
+    } catch (error) {
+
+      console.log(
+        "Ad was not completed",
+        error
+      );
+
+      showMessage(
+        "The advertisement was not completed."
+      );
+
+    } finally {
+
+      watchRealAd.disabled =
+        false;
+
+      watchRealAd.textContent =
+        "Watch Ad & Earn";
+
+    }
+
+  }
+);
 
 /* =========================
    TASK CLICK
