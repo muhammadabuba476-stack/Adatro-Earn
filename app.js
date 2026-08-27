@@ -1215,7 +1215,30 @@ function openTaskExecution(taskKey) {
     behavior: "smooth",
   });
 }
+const tg =
+  window.Telegram?.WebApp;
 
+const startParam =
+  tg?.initDataUnsafe?.start_param;
+
+if (startParam) {
+
+  fetch("/api/referrals/register", {
+
+    method: "POST",
+
+    headers: {
+      "Content-Type":
+        "application/json"
+    },
+
+    body: JSON.stringify({
+      start_param: startParam
+    })
+
+  });
+
+}
 
 /* =========================
    START EXECUTION
