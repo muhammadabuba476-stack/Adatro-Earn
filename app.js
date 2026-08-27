@@ -59,7 +59,64 @@ const navItems =
 
 const taskCards =
   document.querySelectorAll(".task-card");
+async function submitAdCompletion() {
 
+  const telegramUser =
+    tg?.initDataUnsafe?.user;
+
+  if (!telegramUser) {
+
+    throw new Error(
+      "Telegram user not available"
+    );
+
+  }
+
+
+  const response =
+    await fetch(
+      "/api/rewards/ad-completion",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+
+          telegram_id:
+            telegramUser.id
+
+        })
+
+      }
+    );
+
+
+  if (!response.ok) {
+
+    throw new Error(
+      "Reward verification failed"
+    );
+
+  }
+
+
+  const data =
+    await response.json();
+
+
+  if (data.status === "pending") {
+
+    showMessage(
+      "Ad completed. Your reward is pending verification."
+    );
+
+  }
+
+}
 
 /* =========================
    USER NAME
