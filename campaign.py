@@ -117,3 +117,13 @@ async def complete_campaign(
         )
 
         return reward["id"]
+def eligible_campaign(campaign, user):
+
+    return (
+        campaign.status == "active"
+        and user.country_code
+            in campaign.target_countries
+        and campaign.remaining_budget_cents
+            >= required_funding(campaign)
+        and now() < campaign.ends_at
+    )
