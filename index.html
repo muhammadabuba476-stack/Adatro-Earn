@@ -965,7 +965,118 @@
       </div>
 
     </section>
+<section id="withdrawPage" class="page hidden">
 
+  <div class="page-header">
+
+    <button id="withdrawBack" class="back-button">
+      ←
+    </button>
+
+    <div>
+      <span class="eyebrow">WALLET</span>
+      <h2>Withdraw</h2>
+    </div>
+
+  </div>
+
+
+  <div class="withdraw-card">
+
+    <span class="withdraw-label">
+      AVAILABLE
+    </span>
+
+    <strong id="withdrawAvailable">
+      $0.00
+    </strong>
+
+
+    <label>
+      Amount
+    </label>
+
+    <div class="amount-input">
+
+      <span>$</span>
+
+      <input
+        id="withdrawAmount"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="0.00"
+      >
+
+    </div>
+
+
+    <p class="withdraw-hint">
+      Minimum withdrawal:
+      <strong id="minimumWithdrawal">
+        $5.00
+      </strong>
+    </p>
+
+
+    <label>
+      Payment method
+    </label>
+
+    <select id="paymentMethod">
+
+      <option value="">
+        Select payment method
+      </option>
+
+      <option value="bank">
+        Bank account
+      </option>
+
+    </select>
+
+
+    <div id="paymentProfileBox">
+
+      <label>
+        Payment profile
+      </label>
+
+      <button
+        id="addPaymentProfile"
+        class="secondary-button"
+      >
+        Add payment details
+      </button>
+
+    </div>
+
+
+    <button
+      id="submitWithdrawal"
+      class="withdraw-button"
+    >
+      Request withdrawal
+    </button>
+
+  </div>
+
+
+  <div class="withdraw-notice">
+
+    <strong>
+      Withdrawal verification
+    </strong>
+
+    <p>
+      Withdrawals are processed only from
+      verified available funds. Processing
+      time may vary by payment provider.
+    </p>
+
+  </div>
+
+</section>
 
     <!-- Bottom navigation -->
     <nav class="bottom-nav">
