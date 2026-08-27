@@ -428,3 +428,253 @@ document.addEventListener(
 console.log(
   "ADATRO EARN Mini App loaded."
 );
+/* =========================
+   EARN PAGE
+========================= */
+
+const homeContent =
+  document.querySelector(
+    ".welcome"
+  );
+
+const balanceCard =
+  document.querySelector(
+    ".balance-card"
+  );
+
+const mainEarnButton =
+  document.querySelector(
+    ".earn-button"
+  );
+
+const homeSection =
+  document.querySelector(
+    ".opportunities"
+  );
+
+const trustCard =
+  document.querySelector(
+    ".trust-card"
+  );
+
+const earnPage =
+  document.getElementById(
+    "earnPage"
+  );
+
+const backHome =
+  document.getElementById(
+    "backHome"
+  );
+
+const startTaskButtons =
+  document.querySelectorAll(
+    ".start-task"
+  );
+
+const taskModal =
+  document.getElementById(
+    "taskModal"
+  );
+
+const closeModal =
+  document.getElementById(
+    "closeModal"
+  );
+
+const modalOverlay =
+  document.getElementById(
+    "modalOverlay"
+  );
+
+const modalTitle =
+  document.getElementById(
+    "modalTitle"
+  );
+
+const modalDescription =
+  document.getElementById(
+    "modalDescription"
+  );
+
+const confirmTask =
+  document.getElementById(
+    "confirmTask"
+  );
+
+
+function showEarnPage() {
+
+  document.querySelector(
+    ".topbar"
+  ).classList.add("hidden");
+
+  homeContent?.classList.add("hidden");
+
+  balanceCard?.classList.add("hidden");
+
+  mainEarnButton?.classList.add("hidden");
+
+  document.querySelector(
+    ".section-header"
+  )?.classList.add("hidden");
+
+  homeSection?.classList.add("hidden");
+
+  trustCard?.classList.add("hidden");
+
+  earnPage.classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+
+function showHomePage() {
+
+  document.querySelector(
+    ".topbar"
+  ).classList.remove("hidden");
+
+  homeContent?.classList.remove("hidden");
+
+  balanceCard?.classList.remove("hidden");
+
+  mainEarnButton?.classList.remove("hidden");
+
+  document.querySelector(
+    ".section-header"
+  )?.classList.remove("hidden");
+
+  homeSection?.classList.remove("hidden");
+
+  trustCard?.classList.remove("hidden");
+
+  earnPage.classList.add("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+
+mainEarnButton?.addEventListener(
+  "click",
+  showEarnPage
+);
+
+
+backHome?.addEventListener(
+  "click",
+  showHomePage
+);
+
+
+/* =========================
+   TASK MODAL
+========================= */
+
+let selectedTask = null;
+
+
+const taskDetails = {
+
+  watch: {
+    title: "Watch & Complete",
+
+    description:
+      "Watch the sponsored content until the required completion point."
+  },
+
+  brand: {
+    title: "Discover a Brand",
+
+    description:
+      "Visit the sponsored website and complete the required interaction."
+  },
+
+  telegram: {
+    title: "Join & Discover",
+
+    description:
+      "Discover the sponsored Telegram community and complete the required action."
+  }
+
+};
+
+
+startTaskButtons.forEach(
+  (button) => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        selectedTask =
+          button.dataset.task;
+
+        const task =
+          taskDetails[selectedTask];
+
+        if (!task) return;
+
+        modalTitle.textContent =
+          task.title;
+
+        modalDescription.textContent =
+          task.description;
+
+        taskModal.classList.remove(
+          "hidden"
+        );
+
+      }
+    );
+
+  }
+);
+
+
+function hideTaskModal() {
+
+  taskModal.classList.add(
+    "hidden"
+  );
+
+  selectedTask = null;
+}
+
+
+closeModal.addEventListener(
+  "click",
+  hideTaskModal
+);
+
+
+modalOverlay.addEventListener(
+  "click",
+  hideTaskModal
+);
+
+
+/* =========================
+   CONTINUE TASK
+========================= */
+
+confirmTask.addEventListener(
+  "click",
+  () => {
+
+    if (!selectedTask) return;
+
+    hideTaskModal();
+
+    showMessage(
+      "Task verification will be connected to the ADATRO EARN backend."
+    );
+
+  }
+);
