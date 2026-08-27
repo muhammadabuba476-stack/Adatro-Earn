@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>ADATRO EARN</title>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- Header -->
+    <header class="topbar">
+
+      <div class="brand">
+        <div class="brand-mark">A</div>
+
+        <div>
+          <h1>ADATRO</h1>
+          <span>EARN</span>
+        </div>
+      </div>
+
+      <button
+        class="icon-button"
+        id="notificationBtn"
+        aria-label="Notifications"
+      >
+        🔔
+      </button>
+
+    </header>
+
+
+    <!-- Welcome -->
+    <section class="welcome">
+
+      <p id="greeting">
+        Welcome back 👋
+      </p>
+
+      <h2 id="userName">
+        Earn more today.
+      </h2>
+
+      <p class="subtitle">
+        Complete simple opportunities and grow your balance.
+      </p>
+
+    </section>
+
+
+    <!-- Balance Card -->
+    <section class="balance-card">
+
+      <div class="balance-top">
+
+        <span>Available balance</span>
+
+        <button
+          class="eye-button"
+          id="toggleBalance"
+        >
+          👁
+        </button>
+
+      </div>
+
+      <div
+        class="balance"
+        id="balance"
+      >
+        $0.00
+      </div>
+
+      <div class="balance-footer">
+
+        <div>
+          <small>Total earned</small>
+          <strong id="totalEarned">
+            $0.00
+          </strong>
+        </div>
+
+        <div class="balance-arrow">
+          →
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Main CTA -->
+    <button
+      class="earn-button"
+      id="earnButton"
+    >
+      <span>Start Earning</span>
+      <strong>→</strong>
+    </button>
+
+
+    <!-- Section title -->
+    <div class="section-header">
+
+      <div>
+        <span class="eyebrow">
+          OPPORTUNITIES
+        </span>
+
+        <h3>
+          Earn today
+        </h3>
+      </div>
+
+      <button id="seeAll">
+        See all
+      </button>
+
+    </div>
+
+
+    <!-- Opportunities -->
+    <section class="opportunities">
+
+      <!-- Opportunity 1 -->
+      <article class="task-card">
+
+        <div class="task-icon video">
+          ▶
+        </div>
+
+        <div class="task-content">
+
+          <h4>
+            Watch & Complete
+          </h4>
+
+          <p>
+            Watch a sponsored video
+          </p>
+
+          <div class="task-meta">
+
+            <span>
+              ⏱ 30 sec
+            </span>
+
+            <span class="reward">
+              +$0.10
+            </span>
+
+          </div>
+
+        </div>
+
+        <button class="task-arrow">
+          →
+        </button>
+
+      </article>
+
+
+      <!-- Opportunity 2 -->
+      <article class="task-card">
+
+        <div class="task-icon discover">
+          ◉
+        </div>
+
+        <div class="task-content">
+
+          <h4>
+            Discover a Brand
+          </h4>
+
+          <p>
+            Visit a sponsored website
+          </p>
+
+          <div class="task-meta">
+
+            <span>
+              ⏱ 20 sec
+            </span>
+
+            <span class="reward">
+              +$0.05
+            </span>
+
+          </div>
+
+        </div>
+
+        <button class="task-arrow">
+          →
+        </button>
+
+      </article>
+
+
+      <!-- Opportunity 3 -->
+      <article class="task-card">
+
+        <div class="task-icon telegram">
+          ✈
+        </div>
+
+        <div class="task-content">
+
+          <h4>
+            Join & Discover
+          </h4>
+
+          <p>
+            Discover a Telegram community
+          </p>
+
+          <div class="task-meta">
+
+            <span>
+              ⏱ 15 sec
+            </span>
+
+            <span class="reward">
+              +$0.03
+            </span>
+
+          </div>
+
+        </div>
+
+        <button class="task-arrow">
+          →
+        </button>
+
+      </article>
+
+    </section>
+
+
+    <!-- Trust message -->
+    <section class="trust-card">
+
+      <div class="trust-icon">
+        ✓
+      </div>
+
+      <div>
+
+        <strong>
+          Earn responsibly
+        </strong>
+
+        <p>
+          Rewards are confirmed before they become available.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Bottom navigation -->
+    <nav class="bottom-nav">
+
+      <button
+        class="nav-item active"
+        data-page="home"
+      >
+        <span>⌂</span>
+        <small>Home</small>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="earn"
+      >
+        <span>◈</span>
+        <small>Earn</small>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="friends"
+      >
+        <span>♧</span>
+        <small>Friends</small>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="profile"
+      >
+        <span>◯</span>
+        <small>Profile</small>
+      </button>
+
+    </nav>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
