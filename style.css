@@ -1471,4 +1471,77 @@ button:active {
 
   }
 
+.wallet-main-card {
+  padding: 24px 18px;
+  border-radius: 23px;
+  background: var(--text);
+  color: var(--surface);
+}
+
+.wallet-main-card > span {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  opacity: .65;
+}
+
+.wallet-main-card strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 34px;
+  letter-spacing: -.05em;
+}
+
+.wallet-main-card button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border-radius: 13px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.wallet-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.wallet-stat {
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: var(--surface);
+}
+
+.wallet-stat span {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+}
+
+.wallet-stat strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 17px;
+}
+
+.transactions-section {
+  margin-top: 22px;
+}
+
+.section-title h3 {
+  font-size: 14px;
+}
+
+.empty-state {
+  margin-top: 10px;
+  padding: 30px 15px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  color: var(--muted);
+  font-size: 10px;
 }
