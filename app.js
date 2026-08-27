@@ -1260,5 +1260,177 @@ startTaskButtons.forEach(
       }
     );
 
-  
+  /* =========================================
+   ADATRO EARN
+   SINGLE PAGE NAVIGATION
+========================================= */
+
+const pages = {
+  home: document.getElementById("homePage"),
+  earn: document.getElementById("earnPage"),
+  friends: document.getElementById("friendsPage"),
+  profile: document.getElementById("profilePage"),
+  execution: document.getElementById("taskExecutionPage")
+};
+
+
+/* -----------------------------------------
+   HIDE EVERYTHING
+----------------------------------------- */
+
+function hideAllPages() {
+
+  Object.values(pages).forEach((page) => {
+
+    if (page) {
+      page.classList.add("hidden");
+    }
+
+  });
+
+}
+
+
+/* -----------------------------------------
+   HOME
+----------------------------------------- */
+
+function showHomePage() {
+
+  hideAllPages();
+
+  document.querySelector(".topbar")
+    ?.classList.remove("hidden");
+
+  homeContent?.classList.remove("hidden");
+  balanceCard?.classList.remove("hidden");
+  mainEarnButton?.classList.remove("hidden");
+
+  document.querySelector(".section-header")
+    ?.classList.remove("hidden");
+
+  homeSection?.classList.remove("hidden");
+  trustCard?.classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* -----------------------------------------
+   EARN
+----------------------------------------- */
+
+function showEarnPage() {
+
+  hideAllPages();
+
+  document.querySelector(".topbar")
+    ?.classList.add("hidden");
+
+  pages.earn?.classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* -----------------------------------------
+   FRIENDS
+----------------------------------------- */
+
+function showFriendsPage() {
+
+  hideAllPages();
+
+  document.querySelector(".topbar")
+    ?.classList.add("hidden");
+
+  pages.friends?.classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* -----------------------------------------
+   PROFILE
+----------------------------------------- */
+
+function showProfilePage() {
+
+  hideAllPages();
+
+  document.querySelector(".topbar")
+    ?.classList.add("hidden");
+
+  pages.profile?.classList.remove("hidden");
+
+  loadProfile();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* -----------------------------------------
+   TASK EXECUTION
+----------------------------------------- */
+
+function showExecutionPage(taskKey) {
+
+  hideAllPages();
+
+  document.querySelector(".topbar")
+    ?.classList.add("hidden");
+
+  pages.execution?.classList.remove("hidden");
+
+  openTaskExecution(taskKey);
+
+}
+
+
+/* -----------------------------------------
+   MAIN NAVIGATION
+----------------------------------------- */
+
+function handleNavigation(page) {
+
+  switch (page) {
+
+    case "home":
+      showHomePage();
+      break;
+
+    case "earn":
+      showEarnPage();
+      break;
+
+    case "friends":
+      showFriendsPage();
+      break;
+
+    case "profile":
+      showProfilePage();
+      break;
+
+    default:
+      showHomePage();
+
+  }
+
+}
    
