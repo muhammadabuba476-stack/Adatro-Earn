@@ -46,3 +46,34 @@ async def register_referral(
         )
 
         return referral["id"]
+        async def make_referral_eligible(
+    referred_user_id: str
+):
+
+    async with db.transaction():
+
+        referral = await db.fetch_one(
+            """
+            SELECT *
+            FROM referrals
+            WHERE referred_id = $1
+              AND is_eligible = false
+            FOR UPDATE
+            """,
+            referred_user_id,
+        )
+
+        if not referral:
+            return
+
+        await db.execute(
+            """
+            UPDATE referrals
+            SET is_eligible = true,
+                made_eligible_at = now()
+            WHERE id = $1
+            """,
+            referral["id"],
+        )
+
+        return referral["referrer_id"]
