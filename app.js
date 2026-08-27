@@ -1462,3 +1462,5 @@ navItems.forEach((item) => {
 });
    document.querySelector(".bottom-nav")
   ?.classList.add("hidden");
+   document.querySelector(".bottom-nav")
+  ?.classList.remove("hidden");
