@@ -68,6 +68,241 @@
       </p>
 
     </section>
+    <!-- Earn Page -->
+<section id="earnPage" class="page hidden">
+
+  <div class="page-header">
+    <button class="back-button" id="backHome">←</button>
+
+    <div>
+      <span class="eyebrow">EARN</span>
+      <h3>Available tasks</h3>
+    </div>
+  </div>
+
+  <div class="earn-summary">
+    <div>
+      <span>Today's potential</span>
+      <strong>$0.18</strong>
+    </div>
+
+    <div class="earn-count">
+      <strong>3</strong>
+      <span>tasks</span>
+    </div>
+  </div>
+
+
+  <!-- Task -->
+  <article class="earn-task">
+
+    <div class="earn-task-top">
+
+      <div class="large-task-icon">
+        ▶
+      </div>
+
+      <div>
+        <span class="task-label">
+          SPONSORED
+        </span>
+
+        <h4>
+          Watch & Complete
+        </h4>
+
+        <p>
+          Watch the sponsored content
+          until completion.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="task-info">
+
+      <div>
+        <span>Reward</span>
+        <strong>+$0.10</strong>
+      </div>
+
+      <div>
+        <span>Time</span>
+        <strong>30 sec</strong>
+      </div>
+
+    </div>
+
+    <button
+      class="start-task"
+      data-task="watch"
+    >
+      Start Task →
+    </button>
+
+  </article>
+
+
+  <!-- Task -->
+  <article class="earn-task">
+
+    <div class="earn-task-top">
+
+      <div class="large-task-icon">
+        ◉
+      </div>
+
+      <div>
+        <span class="task-label">
+          SPONSORED
+        </span>
+
+        <h4>
+          Discover a Brand
+        </h4>
+
+        <p>
+          Visit a sponsored website
+          and explore the page.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="task-info">
+
+      <div>
+        <span>Reward</span>
+        <strong>+$0.05</strong>
+      </div>
+
+      <div>
+        <span>Time</span>
+        <strong>20 sec</strong>
+      </div>
+
+    </div>
+
+    <button
+      class="start-task"
+      data-task="brand"
+    >
+      Start Task →
+    </button>
+
+  </article>
+
+
+  <!-- Task -->
+  <article class="earn-task">
+
+    <div class="earn-task-top">
+
+      <div class="large-task-icon">
+        ✈
+      </div>
+
+      <div>
+        <span class="task-label">
+          COMMUNITY
+        </span>
+
+        <h4>
+          Join & Discover
+        </h4>
+
+        <p>
+          Discover a Telegram community.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="task-info">
+
+      <div>
+        <span>Reward</span>
+        <strong>+$0.03</strong>
+      </div>
+
+      <div>
+        <span>Time</span>
+        <strong>15 sec</strong>
+      </div>
+
+    </div>
+
+    <button
+      class="start-task"
+      data-task="telegram"
+    >
+      Start Task →
+    </button>
+
+  </article>
+
+</section>
+
+
+<!-- Task Details Modal -->
+<div
+  class="task-modal hidden"
+  id="taskModal"
+>
+
+  <div class="modal-overlay" id="modalOverlay"></div>
+
+  <div class="modal-card">
+
+    <button
+      class="modal-close"
+      id="closeModal"
+    >
+      ×
+    </button>
+
+    <div class="modal-icon">
+      ▶
+    </div>
+
+    <span class="task-label">
+      SPONSORED OPPORTUNITY
+    </span>
+
+    <h3 id="modalTitle">
+      Watch & Complete
+    </h3>
+
+    <p id="modalDescription">
+      Complete this opportunity to
+      become eligible for the displayed
+      reward.
+    </p>
+
+    <div class="requirement-box">
+
+      <strong>
+        Before you start
+      </strong>
+
+      <ul>
+        <li>Complete the required action.</li>
+        <li>Do not close the task early.</li>
+        <li>Completion must be verified.</li>
+      </ul>
+
+    </div>
+
+    <button
+      class="confirm-task"
+      id="confirmTask"
+    >
+      Continue →
+    </button>
+
+  </div>
+
+</div>
 
 
     <!-- Balance Card -->
