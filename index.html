@@ -370,7 +370,147 @@
     </button>
 
   </section>
+<!-- Task Execution Page -->
+<section id="taskExecutionPage" class="page hidden">
 
+  <div class="page-header">
+
+    <button
+      class="back-button"
+      id="taskBack"
+    >
+      ←
+    </button>
+
+    <div>
+      <span class="eyebrow">OPPORTUNITY</span>
+      <h3>Complete task</h3>
+    </div>
+
+  </div>
+
+
+  <!-- Task Status -->
+  <section class="execution-card">
+
+    <div class="execution-icon" id="executionIcon">
+      ▶
+    </div>
+
+    <span
+      class="task-label"
+      id="executionLabel"
+    >
+      SPONSORED
+    </span>
+
+    <h2 id="executionTitle">
+      Watch & Complete
+    </h2>
+
+    <p id="executionDescription">
+      Complete the required action
+      to become eligible for verification.
+    </p>
+
+
+    <!-- Timer -->
+    <div class="timer-box">
+
+      <span>TIME REMAINING</span>
+
+      <strong id="taskTimer">
+        30
+      </strong>
+
+      <small>
+        seconds
+      </small>
+
+    </div>
+
+
+    <!-- Progress -->
+    <div class="progress-section">
+
+      <div class="progress-header">
+
+        <span>
+          Progress
+        </span>
+
+        <strong id="progressPercent">
+          0%
+        </strong>
+
+      </div>
+
+      <div class="progress-track">
+
+        <div
+          class="progress-bar"
+          id="progressBar"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Requirement -->
+    <div class="execution-requirement">
+
+      <strong>
+        Required
+      </strong>
+
+      <p id="executionRequirement">
+        Stay on the opportunity until
+        the required completion point.
+      </p>
+
+    </div>
+
+
+    <!-- Action -->
+    <button
+      class="execution-button"
+      id="executionButton"
+    >
+      Start Opportunity
+    </button>
+
+  </section>
+
+
+  <!-- Verification message -->
+  <section
+    class="verification-card hidden"
+    id="verificationCard"
+  >
+
+    <div class="verification-icon">
+      ✓
+    </div>
+
+    <div>
+
+      <strong>
+        Completion submitted
+      </strong>
+
+      <p>
+        Your activity has been submitted
+        for verification. Your reward will
+        only become available after the
+        server confirms the completion.
+      </p>
+
+    </div>
+
+  </section>
+
+</section>
 
   <!-- Stats -->
   <section class="referral-stats">
