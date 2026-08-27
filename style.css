@@ -1374,4 +1374,101 @@ button:active {
 
   color: var(--muted);
 }
+/* =========================================
+   BOTTOM NAVIGATION
+========================================= */
+
+.bottom-nav {
+
+  position: fixed;
+
+  left: 50%;
+  bottom: 10px;
+
+  z-index: 50;
+
+  width: calc(100% - 20px);
+  max-width: 500px;
+
+  transform: translateX(-50%);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 7px;
+
+  border: 1px solid var(--border);
+  border-radius: 19px;
+
+  background: var(--surface);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.10);
+
+  backdrop-filter: blur(15px);
+}
+
+
+.nav-item {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  padding: 8px 4px;
+
+  border-radius: 13px;
+
+  color: var(--muted);
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+
+.nav-item span {
+
+  font-size: 17px;
+  line-height: 1;
+
+}
+
+
+.nav-item small {
+
+  font-size: 8px;
+  font-weight: 700;
+
+}
+
+
+.nav-item.active {
+
+  background: var(--surface-soft);
+
+  color: var(--text);
+
+}
+
+
+.nav-item:active {
+
+  transform: scale(.94);
+
+}
+
+
+@media (min-width: 700px) {
+
+  .bottom-nav {
+
+    bottom: 18px;
+
+  }
+
 }
