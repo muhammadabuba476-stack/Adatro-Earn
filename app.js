@@ -1318,7 +1318,48 @@ function showHomePage() {
   });
 
 }
+/* =========================================
+   ADATRO EARN — REAL ADSGRAM
+========================================= */
 
+const ADSGRAM_BLOCK_ID = "YOUR_BLOCK_ID";
+
+let AdController = null;
+
+function initializeAdsGram() {
+
+  if (!window.Adsgram) {
+
+    console.error(
+      "AdsGram SDK not loaded"
+    );
+
+    return false;
+  }
+
+  try {
+
+    AdController =
+      window.Adsgram.init({
+        blockId: ADSGRAM_BLOCK_ID,
+        debug: false
+      });
+
+    return true;
+
+  } catch (error) {
+
+    console.error(
+      "AdsGram initialization failed:",
+      error
+    );
+
+    return false;
+  }
+}
+
+
+initializeAdsGram();
 
 /* -----------------------------------------
    EARN
