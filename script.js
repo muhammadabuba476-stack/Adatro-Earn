@@ -45,7 +45,7 @@ const CONFIG = {
     API_BASE_URL: "https://api.adatroearn.com"
     */
 
-    API_BASE_URL: "",
+    API_BASE_URL: "https://magnificent-dasik-00b198.netlify.app/",
 
     /*
     Your Telegram bot username.
