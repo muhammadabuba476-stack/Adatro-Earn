@@ -54,7 +54,7 @@ const CONFIG = {
     BOT_USERNAME: "AdatroEarnBot"
     */
 
-    BOT_USERNAME: "YOUR_BOT_USERNAME",
+    BOT_USERNAME: "AdatroEarnBot",
 
     /*
     Demo mode is ONLY for UI testing.
